@@ -1,0 +1,20 @@
+.sidebar-left-item{
+    font-size: 1.75rem;
+    display: flex;
+    margin-left: 8px;
+    &:hover{
+        opacity: .8;
+        background-color: #340444;
+    }
+    
+    &__text{
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+    }
+    .MuiSvgIcon-root{
+        margin-right: 5px;
+        cursor: pointer;
+    }
+}

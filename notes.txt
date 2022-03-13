@@ -1,0 +1,29 @@
+font-families : 
+        [lang] body{font-family:Slack-Lato,Slack-Fractions,appleLogo,sans-serif}
+[lang=ja-JP] body{font-family:NotoSansJP,Slack-Lato,Slack-Fractions,appleLogo,sans-serif}
+[lang=ko-KR] body{font-family:NotoSansKR,Slack-Lato,Slack-Fractions,appleLogo,sans-serif}
+[lang=zh-CN] body{font-family:NotoSansSC,Slack-Lato,Slack-Fractions,appleLogo,sans-serif}
+[lang=zh-TW] body{font-family:NotoSansTC,Slack-Lato,Slack-Fractions,appleLogo,sans-serif}
+
+
+sigin:
+        h1 : 
+            font-families: Slack-Larsseit,Helvetica Neue,Helvetica,Segoe UI,Tahoma,Arial,sans-serif;
+            font-weight:900;
+            content:First, enter your email {note:div used}
+        text after h1:
+            color: #454245;
+            content: We suggest using the (strong)email address you use at work.
+
+        text after btn:
+            content:It’s okay to send me emails about Slack.
+
+            By continuing, you’re agreeing to our Customer Terms of Service, Privacy Policy, and Cookie Policy.
+            Privacy & Terms
+            Contact Us
+            Change region
+
+
+
+colors:
+    sigin btn color :#611f69

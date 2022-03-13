@@ -1,28 +1,53 @@
 // Import the functions you need from the SDKs you need
-import {initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 import { GoogleAuthProvider , getAuth ,signInWithPopup} from "firebase/auth";
 
-import {getFirestore , collection, getDocs ,getDoc,doc ,setDoc ,writeBatch}from  "firebase/firestore";
+import {getFirestore , collection,getDoc,doc ,setDoc}from  "firebase/firestore";
 
 
 
 
 // low budget slack's Firebase configuration
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB7BHGxLKd8ocvJyhMKvjfTDzsYo6lb9Yc",
-  authDomain: "low-budget-slack.firebaseapp.com",
-  projectId: "low-budget-slack",
-  storageBucket: "low-budget-slack.appspot.com",
-  messagingSenderId: "323136424491",
-  appId: "1:323136424491:web:21b58b9fe5f122f0e1f86e"
+  apiKey: "AIzaSyA_914kVgbJJRkYQP8NJu6C7xypVKXpKY8",
+  authDomain: "low-budget-slack-1.firebaseapp.com",
+  projectId: "low-budget-slack-1",
+  storageBucket: "low-budget-slack-1.appspot.com",
+  messagingSenderId: "200011090176",
+  appId: "1:200011090176:web:f1c56782ec90742df04be5"
 };
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyB7BHGxLKd8ocvJyhMKvjfTDzsYo6lb9Yc",
+//   authDomain: "low-budget-slack.firebaseapp.com",
+//   projectId: "low-budget-slack",
+//   storageBucket: "low-budget-slack.appspot.com",
+//   messagingSenderId: "323136424491",
+//   appId: "1:323136424491:web:21b58b9fe5f122f0e1f86e"
+// };
+
+
+// Your web app's Firebase configuration
+// const firebaseConfig = {
+//     apiKey: "AIzaSyDU4q0XqZxLmuaDR5pE-zkaPIgOPMeKFVw",
+//     authDomain: "low-budget-slack-2.firebaseapp.com",
+//     projectId: "low-budget-slack-2",
+//     storageBucket: "low-budget-slack-2.appspot.com",
+//     messagingSenderId: "744248530978",
+//     appId: "1:744248530978:web:f4779bb33bed6a91ebd27b"
+// };
+
 
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-
+export const firestoreDatabase = getFirestore(app);
 
 ////GOOGLE AUTHENTICATION
 
@@ -98,10 +123,9 @@ export const createUserProfileDocument = async ( userAuth , additionalData) => {
 
     // console.log("[collections]",{collections:collectionSnapshot.docs.map( doc => doc.data() )})
 
-    
 
     if (!snapShot.empty) {
-        const { displayName , email} = userAuth;
+        const { displayName , email ,photoUrl} = userAuth;
 
         const date = new Date();
 

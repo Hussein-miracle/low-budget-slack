@@ -10,7 +10,11 @@
 
 # production
 /build
-
+/assets
+/components
+/firebase
+/pages
+/redux
 # misc
 .DS_Store
 .env.local

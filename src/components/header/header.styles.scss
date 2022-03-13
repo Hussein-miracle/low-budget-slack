@@ -1,0 +1,208 @@
+.header{
+    width:100%;
+    height: 6vh;
+    color:#fff;
+    background-color:#3c0943;
+    flex: 0.3;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+    .MuiSvgIcon-root{
+        width: 2.6rem;
+        height: 2.6rem;
+        cursor:pointer;
+    }
+
+    
+
+    &__menu{
+        flex: .3;
+        align-self:flex-start;
+        padding: 0 .5rem;
+        .MuiSvgIcon-root{
+
+        }
+
+
+    }
+
+    &__center{
+        width:80%;
+        display: flex;
+        // align-self:center;
+        // justify-content: space-evenly;
+
+        flex: .5;
+        // margin:0 3rem 3rem 0;
+        margin-left: 3rem;
+        transform:translateX(-40%);
+            
+            -webkit-transform:translateX(-40%);
+            -moz-transform:translateX(-40%);
+            -ms-transform:translateX(-40%);
+            -o-transform:translateX(-40%);
+    }
+
+    &__direction-arrow{
+        margin: 0 4rem;
+        display: flex;
+        justify-content: space-between;
+        .MuiSvgIcon-root{
+            opacity:0.7;
+        }
+        &--left{
+
+        }
+
+        &--right{
+
+        }
+    }
+
+    &__clock{
+        margin: 0 2rem;
+        margin-left: 0;
+        &--icon{
+            opacity:0.8;
+            cursor:pointer;
+            fill:#fff;
+            width: 2.6rem;
+        height: 2.6rem;
+        }
+        .MuiSvgIcon-root{
+            opacity:0.8;
+        }
+    }
+    
+
+    &__search{
+            //width: 30vw;
+            border: 1px solid #fff;
+            display: flex;
+            opacity: .79;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            
+
+
+
+
+
+
+
+
+        &--input{
+            // margin-left: -50%;
+            padding: 6px 8px;
+            width: 48rem;
+            background-color: transparent;
+            flex: .85;
+            outline: none;
+            border:none;
+            font-size: 1.6rem;
+    
+            color:#fff;
+        }
+        &--btn{
+            border-left: 1px solid#fff;
+            width: 15%;
+            flex: .15;
+            display: flex;
+            // flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            cursor: pointer;
+            .MuiSvgIcon-root{
+                transform: translate(-30%,-5%);
+                -webkit-transform: translate(-30%,-5%);
+                -moz-transform: translate(-30%,-5%);
+                -ms-transform: translate(-30%,-5%);
+                -o-transform: translate(-30%,-5%);
+}
+        }
+        
+    }
+
+
+    &__right{
+        flex: 0.2;
+        display: flex;
+        align-self:flex-end;
+        //justify-content: space-evenly;
+        //margin-left:14rem;
+        
+}
+
+    &__helpline{
+        transform: translateX(30%);
+        opacity: .86;
+        margin-right: 2rem;
+        -webkit-transform: translateX(30%);
+        -moz-transform: translateX(30%);
+        -ms-transform: translateX(30%);
+        -o-transform: translateX(30%);
+        &:hover{
+            opacity: .65;
+        }
+}
+    &__account{
+        position: relative;
+        // color:green;
+
+        &--icon{
+            object-fit:cover;
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius:3px;
+            -webkit-border-radius:3px;
+            -moz-border-radius:3px;
+            -ms-border-radius:3px;
+            -o-border-radius:3px;
+        }
+        
+        
+        .MuiSvgIcon-root{
+            width: 2.8rem;
+            height: 2.8rem;
+            &:hover{
+            opacity: .85;
+            }
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            background-color: green;
+            bottom: -3px;
+            right: 6.5px;
+            z-index: 2;
+        }
+
+        &::after{
+            content: "z";
+            background-color: transparent;
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            font-size: 13px;
+            color: green;
+            bottom: 18px;
+            right: 4px;
+            z-index: 15;
+        }
+    }
+
+    
+}

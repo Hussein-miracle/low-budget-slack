@@ -1,0 +1,79 @@
+.sidebar-left{
+    border-top: 1px solid #49274b;
+    // justify-content: stretch;
+    // align-self: stretch;
+    flex:0.25;
+    height: 99vh;
+    background-color:#460d4d;
+    color: rgba(255, 255, 255, .9);
+    // padding-right: .5rem;    // padding-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    
+
+    &__header{
+        
+        border-bottom: 1px solid #49274b;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        &--info{
+
+            h3{
+                // word-wrap: ;
+                text-overflow: ellipsis;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .MuiSvgIcon-root{
+                color:#fff;
+                font-size: 1.8rem;
+                margin-top: 3px;
+                }
+            }
+
+            .MuiSvgIcon-root{
+                color: green;
+                font-size: 1.6rem;
+            }
+            // margin-top: 3px;
+            padding-left: 4px;
+            h4{
+                display: flex;
+            }
+
+        }
+        &--create{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 6px;
+            cursor: pointer;
+            position: relative;
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: #fff;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            // .MuiSvgIcon-root{
+                
+            //     color: #212121;
+            //     position: absolute;
+            //     top: 50%;
+            //     left: 50%;
+            //     transform: translate(-50%,-50%);
+            //     -webkit-transform: translate(-50%,-50%);
+            //     -moz-transform: translate(-50%,-50%);
+            //     -ms-transform: translate(-50%,-50%);
+            //     -o-transform: translate(-50%,-50%);
+            // }
+        }
+    }
+
+
+}

@@ -1,0 +1,38 @@
+.chat{
+    flex:0.7;
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    margin-top: .3rem;
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid lightgray;
+        &--info{
+            display: flex;
+            padding-left:6px;
+        }
+        &--details{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__content{
+        overflow-y:scroll;
+    }
+    &__content::-webkit-scrollbar{
+        overflow-y:scroll;
+        display: none;
+    }
+}
+
+
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+#scroll-target{
+    margin-top: 2rem;
+}

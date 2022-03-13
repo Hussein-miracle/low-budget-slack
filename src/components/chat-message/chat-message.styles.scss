@@ -1,0 +1,19 @@
+.chat-message{
+    padding-left:10px;
+    display: flex;
+    margin: 10px 0;
+    gap: 5px;
+    img{
+            width:3rem;
+            height: 3rem;
+            object-fit: cover;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+    &__info{
+        
+    }
+}

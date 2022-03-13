@@ -1,0 +1,10 @@
+.sidebar-right{
+        height:99vh;
+        overflow-y: scroll;
+    flex:0.75;
+    margin-top: .5rem;
+    padding-right:.5%;
+}
+.sidebar-right::-webkit-scrollbar{
+        display: none;
+}
