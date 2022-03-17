@@ -25,8 +25,7 @@ const ChatInput = ({chatId,channelName}) => {
                 sentOn,
                 momentId,
                 timeSent,
-                user:"Dev M",
-                userImgUrl:"https://pbs.twimg.com/profile_images/1499365709012512769/I9Nz-MM2_400x400.jpg"
+                user:"Dev M account on firestore",
             }
 
             await addDoc(chatRef, messageContent);

@@ -67,6 +67,7 @@ export const signInWithGoogle =  () => { //ny own function
 
         const singInResponse = signInWithPopup(auth , provider);
     
+        console.log(singInResponse)
         return singInResponse;
 
     }catch(error){
@@ -100,17 +101,17 @@ export const createUserProfileDocument = async ( userAuth , additionalData) => {
 
     const userRef = doc( firestoreDatabase ,"users", `${userAuth.uid}`);
 
-    console.log("[userRef]" , userRef);
+    // console.log("[userRef]" , userRef);
 
 
     const snapShot = await getDoc( userRef );
-    console.log("[snapShot]",snapShot);
+    // console.log("[snapShot]",snapShot);
 
 
     //TO GET A COLLECTION
     const collectionRef = collection( firestoreDatabase , `users`)  ;
 
-    console.log("[collectionRef]",collectionRef)
+    // console.log("[collectionRef]",collectionRef)
 
     
 
@@ -125,7 +126,7 @@ export const createUserProfileDocument = async ( userAuth , additionalData) => {
 
 
     if (!snapShot.empty) {
-        const { displayName , email ,photoUrl} = userAuth;
+        const { displayName , email ,photoURL} = userAuth;
 
         const date = new Date();
 
@@ -142,13 +143,14 @@ export const createUserProfileDocument = async ( userAuth , additionalData) => {
             email:email ,
             createdAt:createdAt , 
             creationDate,momentId ,
+            photoURL:photoURL,
             ...additionalData
         }
 
 
         await setDoc(userRef , snapShotData);
 
-        console.log("[setDoc DONE!]")
+        // console.log("[setDoc DONE!]")
         
             
     }

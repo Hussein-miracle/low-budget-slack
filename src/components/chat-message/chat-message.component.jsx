@@ -15,10 +15,9 @@ const ChatMessage = ({timeSent,userName,userImgUrl,message}) => {
             {new Date(timeSent?.toDate()).toUTCString()}
           </span>
           </h5>
-          <p>
+          <h6>
           {message}
-          
-          </p>
+          </h6>
         </div>
         
     </div>

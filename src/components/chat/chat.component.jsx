@@ -15,7 +15,7 @@ import ChatInput from "../chat-input/chat-input.component";
 
 import "./chat.styles.scss";
 
-const Chat = ({chatId}) => {
+const Chat = ({chatId,user}) => {
   const chatRef = useRef(null)
   const[chatName,setChatName] = useState("");
   const[messages,setMessages] = useState(null);
@@ -88,8 +88,8 @@ const Chat = ({chatId}) => {
                         message = {message} 
                         key={`${momentId}`}
                         timeSent ={timeSent}
-                        userName ={userName}
-                        userImgUrl={userImgUrl}
+                        userName ={user?.displayName}
+                        userImgUrl={user.photoURL}
                         />
               </ScrollIntoView>
                       )

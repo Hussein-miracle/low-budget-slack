@@ -20,8 +20,9 @@ import AddIcon from '@mui/icons-material/Add';
 // import FileCopyIcon from '@mui/icons-material/FileCopy';
 
 
-const SidebarLeft = () => {
-    const [data,setData] = useState(null)
+const SidebarLeft = ({user}) => {
+    const [data,setData] = useState(null);
+    const [show,setShow] = useState(true);
     
 
     useEffect( () => {
@@ -43,18 +44,12 @@ const SidebarLeft = () => {
             <div className="sidebar-left__header">
                 <div className="sidebar-left__header--info">
                     <h3>Badaass Startup  <KeyboardArrowDownIcon/></h3>
-                    <h4> <FiberManualRecordIcon/> Abdullahi </h4>
-              </div>
+                    <h4> <FiberManualRecordIcon/> {user?.displayName} </h4>
+                </div>
+
                 <div className="sidebar-left__header--create">
                 {/* <CheckBoxOutlineBlankIcon/> */}
-                
-
-<motion.svg  drag  dragConstraints={{
-    left:0,
-    top:0,
-    right:0,
-    bottom:0
-}}> 
+<motion.svg> 
   <motion.path
     initial={{
         rotate:0,
@@ -83,7 +78,7 @@ const SidebarLeft = () => {
     }}
    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="#340444"/>
 
-   <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="#340444"></path>
+   
 </motion.svg>
                 </div>
             </div>
@@ -96,10 +91,16 @@ const SidebarLeft = () => {
                 
             <SidebarLeftItem Icon={ArrowDropDownIcon} text='Slack Connect' />
             <SidebarLeftItem Icon={MoreVertIcon} text='More' />
-            <SidebarLeftItem Icon={ArrowRightIcon} text='Channels' />
-            {data?.map( (doc) =>  <SidebarLeftItem key={doc.id} id={doc.id} text={doc.data().chatName}/> )}
+            <SidebarLeftItem 
+            onClick={()=> setShow(!show)}
+            Icon={ArrowRightIcon} text='Channels' />
 
-            <SidebarLeftItem addChat={true} Icon={AddIcon} text='Add channel' />
+
+            {data?.map( (doc) =>  <SidebarLeftItem  key={doc.id}  id={doc.id} text={doc.data().chatName}/> )}
+
+            <SidebarLeftItem style={{
+                display: show ? "flex" : "none"
+            }} addChat={true} Icon={AddIcon} text='Add channel' />
                 
             <SidebarLeftItem Icon={ArrowRightIcon} text='Direct messages' />
             <SidebarLeftItem Icon={ArrowRightIcon} text='Apps' />

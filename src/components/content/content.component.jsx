@@ -5,12 +5,12 @@ import SidebarRight from '../sidebar-right/sidebar-right.component';
 import "./content.styles.scss";
 
 
-const Content = () => {
+const Content = ({user}) => {
   return (
     <div className="content">
-        <SidebarLeft/>
+        <SidebarLeft user={user} />
         <Routes>
-          <Route path="/" element={<SidebarRight/>}/>
+          <Route path="/" element={<SidebarRight user={user} />}/>
         </Routes>
     </div>
   )

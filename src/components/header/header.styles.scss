@@ -1,13 +1,19 @@
 .header{
+    position:relative;
+    top:0;
+    left:0;
+    right:0;
     width:100%;
     height: 6vh;
     color:#fff;
     background-color:#3c0943;
     flex: 0.3;
     display: flex;
-    // justify-content: center;
+    justify-content:space-between;
     align-items: center;
     padding: 5px;
+
+    // padding-left: 15vw;
 
     .MuiSvgIcon-root{
         width: 2.6rem;
@@ -17,142 +23,85 @@
 
     
 
-    &__menu{
-        flex: .3;
-        align-self:flex-start;
-        padding: 0 .5rem;
-        .MuiSvgIcon-root{
 
-        }
-
-
-    }
-
-    &__center{
-        width:80%;
-        display: flex;
-        // align-self:center;
-        // justify-content: space-evenly;
-
+    &__left{
         flex: .5;
-        // margin:0 3rem 3rem 0;
-        margin-left: 3rem;
-        transform:translateX(-40%);
-            
-            -webkit-transform:translateX(-40%);
-            -moz-transform:translateX(-40%);
-            -ms-transform:translateX(-40%);
-            -o-transform:translateX(-40%);
+        display: flex;
+        align-items: center;
     }
 
-    &__direction-arrow{
-        margin: 0 4rem;
+    &__right{
+
+        flex: .1;
         display: flex;
-        justify-content: space-between;
-        .MuiSvgIcon-root{
-            opacity:0.7;
-        }
-        &--left{
-
-        }
-
-        &--right{
-
-        }
+        // justify-content:space-between;
+        justify-self:end;
+        margin-left: 16rem;
     }
 
     &__clock{
-        margin: 0 2rem;
-        margin-left: 0;
+        margin: 0 1.2rem;
+        flex: .3;
+        // margin-left: 0;
+        
         &--icon{
+            margin-left: 90%;
             opacity:0.8;
             cursor:pointer;
             fill:#fff;
             width: 2.6rem;
-        height: 2.6rem;
+            height: 2.6rem;
+            
         }
         .MuiSvgIcon-root{
             opacity:0.8;
         }
     }
-    
 
     &__search{
-            //width: 30vw;
-            border: 1px solid #fff;
+        width: 100%;
+            border: 1px solid #ececec;
             display: flex;
             opacity: .79;
-            border-radius: 5px;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            -ms-border-radius: 5px;
-            -o-border-radius: 5px;
-            
-
-
-
-
-
-
-
-
-        &--input{
-            // margin-left: -50%;
-            padding: 6px 8px;
-            width: 48rem;
-            background-color: transparent;
-            flex: .85;
-            outline: none;
-            border:none;
-            font-size: 1.6rem;
-    
-            color:#fff;
+            border-radius:4.5px;
+            -webkit-border-radius:4.5px;
+            -moz-border-radius:4.5px;
+            -ms-border-radius:4.5px;
+            -o-border-radius:4.5px;
+            &--input{
+                width: 40vw;
+                flex: 1;
+                flex-shrink: 1;
+                height: 2.8rem;
+                padding: 8px 10px;
+                background-color: transparent;
+                outline: none;
+                border:none;
+                font-size: 1.6rem;
+                color:#fff;
         }
         &--btn{
-            border-left: 1px solid#fff;
-            width: 15%;
-            flex: .15;
-            display: flex;
-            // flex-direction: column;
-            justify-content: center;
-            align-items: flex-end;
             cursor: pointer;
             .MuiSvgIcon-root{
-                transform: translate(-30%,-5%);
-                -webkit-transform: translate(-30%,-5%);
-                -moz-transform: translate(-30%,-5%);
-                -ms-transform: translate(-30%,-5%);
-                -o-transform: translate(-30%,-5%);
-}
+
+            }
         }
         
     }
 
 
-    &__right{
-        flex: 0.2;
-        display: flex;
-        align-self:flex-end;
-        //justify-content: space-evenly;
-        //margin-left:14rem;
-        
-}
+    
 
     &__helpline{
-        transform: translateX(30%);
-        opacity: .86;
-        margin-right: 2rem;
-        -webkit-transform: translateX(30%);
-        -moz-transform: translateX(30%);
-        -ms-transform: translateX(30%);
-        -o-transform: translateX(30%);
+        opacity: .8;
+        margin:0 1rem;
+
         &:hover{
             opacity: .65;
         }
-}
+    }
     &__account{
         position: relative;
-        // color:green;
 
         &--icon{
             object-fit:cover;
@@ -205,4 +154,459 @@
     }
 
     
+}
+
+@media (max-width:53.4375em) {
+    .header{
+     
+
+
+    &__left{
+    }
+
+    &__right{
+        margin-left: 10rem;
+    }
+
+    &__clock{
+
+        &--icon{
+            margin-left: 90%;
+        
+        }
+    }
+
+    &__search{
+        width: 100%;
+            &--input{
+                width: 40vw;
+                flex: 1;
+                flex-shrink: 1;
+                height: 2.8rem;
+                padding: 8px 10px;
+                background-color: transparent;
+        }
+        &--btn{
+            .MuiSvgIcon-root{
+
+            }
+        }
+        
+    }
+
+
+    
+
+    &__helpline{
+        margin:0 1rem;
+
+        &:hover{
+            
+        }
+    }
+    &__account{
+
+        &--icon{
+
+        }
+        
+        
+        .MuiSvgIcon-root{
+            width: 2.8rem;
+            height: 2.8rem;
+            &:hover{
+            opacity: .85;
+            }
+        }
+
+        &::before{
+            width: 14px;
+            height: 14px;
+
+            bottom: -3px;
+            right: 6.5px;
+            z-index: 2;
+        }
+
+        &::after{
+            content: "z";
+            width: 6px;
+            height: 6px;
+            font-size: 13px;
+
+            bottom: 18px;
+            right: 4px;
+        }
+    }
+
+    
+    }
+}
+@media (max-width:49.375em) {
+    .header{
+     
+
+
+    &__left{
+    }
+
+    &__right{
+        margin-left: 6rem;
+    }
+
+    &__clock{
+
+        &--icon{
+            margin-left: 60%;
+        
+        }
+    }
+
+    &__search{
+        width: 100%;
+            &--input{
+                width: 40vw;
+                flex: 1;
+                flex-shrink: 1;
+                height: 2.8rem;
+                padding: 8px 10px;
+                background-color: transparent;
+        }
+        &--btn{
+            .MuiSvgIcon-root{
+
+            }
+        }
+        
+    }
+
+
+    
+
+    &__helpline{
+        margin:0 1rem;
+
+        &:hover{
+            
+        }
+    }
+    &__account{
+
+        &--icon{
+
+        }
+        
+        
+        .MuiSvgIcon-root{
+            width: 2.8rem;
+            height: 2.8rem;
+            &:hover{
+            opacity: .85;
+            }
+        }
+
+        &::before{
+            width: 14px;
+            height: 14px;
+
+            bottom: -3px;
+            right: 6.5px;
+            z-index: 2;
+        }
+
+        &::after{
+            content: "z";
+            width: 6px;
+            height: 6px;
+            font-size: 13px;
+
+            bottom: 18px;
+            right: 4px;
+        }
+    }
+
+    
+    }
+}
+@media (max-width:43.125em) {
+    .header{
+     
+
+
+    &__left{
+        margin: 0;
+        padding: 0;
+    }
+
+    &__right{
+        flex: 0.2;
+        width: 30vw;
+        margin-left: 1rem;
+    }
+
+    &__clock{
+
+        &--icon{
+            margin-left: 10%;
+        
+        }
+    }
+
+    &__search{
+        width: 100%;
+        margin-left: -6rem;
+            &--input{
+                width: 40vw;
+                
+                flex: 1;
+                flex-shrink: 1;
+                height: 2.8rem;
+                padding: 8px 10px;
+                background-color: transparent;
+        }
+        &--btn{
+            .MuiSvgIcon-root{
+
+            }
+        }
+        
+    }
+
+
+    
+
+    &__helpline{
+        margin:0 1rem;
+
+        &:hover{
+            
+        }
+    }
+    &__account{
+
+        &--icon{
+
+        }
+        
+        
+        .MuiSvgIcon-root{
+            width: 2.8rem;
+            height: 2.8rem;
+            &:hover{
+            opacity: .85;
+            }
+        }
+
+        &::before{
+            width: 14px;
+            height: 14px;
+
+            bottom: -3px;
+            right: 6.5px;
+            z-index: 2;
+        }
+
+        &::after{
+            content: "z";
+            width: 6px;
+            height: 6px;
+            font-size: 13px;
+
+            bottom: 18px;
+            right: 4px;
+        }
+    }
+
+    
+    }
+}
+@media (max-width:22.5em) {
+    .header{
+     
+
+
+    &__left{
+        flex: .5;
+        margin: 0;
+        padding: 0;
+        transform: translateX(3rem);
+        -webkit-transform: translateX(3rem);
+        -moz-transform: translateX(3rem);
+        -ms-transform: translateX(3rem);
+        -o-transform: translateX(3rem);
+}
+
+    &__right{
+        flex: 0.3;
+        width: 30vw;
+        margin-left: 1rem;
+    }
+
+    &__clock{
+        flex: .2;
+        &--icon{
+            margin-left: 10%;
+        
+        }
+    }
+
+    &__search{
+        width: 100%;
+        margin-left: -6rem;
+            &--input{
+                width: 40vw;
+                
+                flex: 1;
+                flex-shrink: 1;
+                height: 2.8rem;
+                padding: 8px 10px;
+                background-color: transparent;
+        }
+        &--btn{
+            .MuiSvgIcon-root{
+
+            }
+        }
+        
+    }
+
+
+    
+
+    &__helpline{
+        margin:0 1rem;
+
+        &:hover{
+            
+        }
+    }
+    &__account{
+
+        &--icon{
+
+        }
+        
+        
+        .MuiSvgIcon-root{
+            width: 2.8rem;
+            height: 2.8rem;
+            &:hover{
+            opacity: .85;
+            }
+        }
+
+        &::before{
+            width: 14px;
+            height: 14px;
+
+            bottom: -3px;
+            right: 6.5px;
+            z-index: 2;
+        }
+
+        &::after{
+            content: "z";
+            width: 6px;
+            height: 6px;
+            font-size: 13px;
+
+            bottom: 18px;
+            right: 4px;
+        }
+    }
+
+    
+    }
+}
+@media (max-width:17.5em) {
+    .header{
+     
+
+
+    &__left{
+        margin: 0;
+        padding: 0;
+    }
+
+    &__right{
+        // flex: 0.2;
+        width: 30vw;
+        margin-left: 1rem;
+    }
+
+    &__clock{
+
+        &--icon{
+            margin-left: 5%;
+        
+        }
+    }
+
+    &__search{
+        width: 100%;
+        margin-left: -2rem;
+            &--input{
+                // width: 40vw;
+                
+                flex: 1;
+                flex-shrink: 1;
+                height: 2.8rem;
+                padding: 8px 10px;
+                background-color: transparent;
+        }
+        &--btn{
+            .MuiSvgIcon-root{
+
+            }
+        }
+        
+    }
+
+
+    
+
+    &__helpline{
+        margin:0 1rem;
+
+        &:hover{
+            
+        }
+    }
+    &__account{
+
+        &--icon{
+
+        }
+        
+        
+        .MuiSvgIcon-root{
+            width: 2.8rem;
+            height: 2.8rem;
+            &:hover{
+            opacity: .85;
+            }
+        }
+
+        &::before{
+            width: 14px;
+            height: 14px;
+
+            bottom: -3px;
+            right: 6.5px;
+            z-index: 2;
+        }
+
+        &::after{
+            content: "z";
+            width: 6px;
+            height: 6px;
+            font-size: 13px;
+
+            bottom: 18px;
+            right: 4px;
+        }
+    }
+
+    
+    }
 }

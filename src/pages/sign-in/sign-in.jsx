@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import {Link} from "react-router-dom";
+import {Link , Navigate} from "react-router-dom";
 import {motion} from "framer-motion";
 
 import { auth , signInWithGoogle } from "../../firebase/firebase.utils";
@@ -16,24 +16,19 @@ const SignIn = () => {
     const [submitted,setSubmitted] = useState(false)
     const [userCredentials ,setUserCredentials ] = useState({
         email : "",
-            password:""
     })
 
     
     const {email,password} = userCredentials;
-    
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+        // signInWithGoogle();
         const {email , password } =  userCredentials ;
-
-
         try{
-            
-            // await createUserWithEmailAndPassword(auth , email , password);
+            await createUserWithEmailAndPassword(auth , email , password);
 
-            // setUserCredentials({email:"" , password: ""})
+            setUserCredentials({email:"" , password: ""})
 
         }catch(err){
             alert(err)
@@ -48,13 +43,19 @@ const SignIn = () => {
 
     const handleChange = (event) =>{
         // console.log(event.target);
-        // const {name , value} = event.target;
+        const {name , value} = event.target;
         // console.log(name);
-        // setUserCredentials( {...userCredentials, [name] : value } )
+        setUserCredentials( {...userCredentials, [name] : value } )
         
         
     }
 
+    const handleClick = (e) => {
+        e.preventDefault();
+        // setTimeout(()=>{
+        //     setSubmitted(true);
+        // },1000)
+    }
     
         return (
             
@@ -82,18 +83,22 @@ const SignIn = () => {
                     <h4 className="sign-in__title--sub">Enter your workspace's Slack URL</h4>
 
                     <form className="sign-in__form"  onSubmit={handleSubmit}>
-                        <input className="sign-in__url-input" type="url" placeholder={`your-workspace.slack.com`} required/>
+                        {/* <input className="sign-in__url-input" type="text" placeholder={`your-work/slack email here`} required/> */}
 
+                        {/* <button className="sign-in__btn"
+                        onClick={handleClick}
+                        >{submitted ? <Loader/> : "Continue" }</button> */}
+
+                        
                         <button className="sign-in__btn"
-                        onClick={()=> setSubmitted(!submitted)}
-                        >{submitted ? <Loader/> : "Continue" }</button>
-
-                        
-                        
+                        onClick={signInWithGoogle}
+                        >Google Sign-In</button>
                     </form>
 
+
+
                     <div className="sign-in__text">
-                        <p>Don't know your workspace URL? <span className="sign-in__link">Find your workspaces</span></p>
+                        <p>Don't know your workspace URL? <span className="sign-in__link">Find your workspace</span><Link to = "/signup">here</Link></p>
                     <p>Looking to create workspace instead? <a className="sign-in__link underline">Create a new workspace</a></p>
                     </div>
 
